@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monstera Website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="service.html">Services</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="videos.html">Videos</a></li>
@@ -23,38 +24,98 @@
     </main>
 
     <div class="slideshow-container">
-        <h2 class="slide-title">Our Import/Export Operations</h2>
+        <h2 class="slide-title">Welcome to Monstera Future</h2>
         
         <div class="slide">
-            <img src="img/ship_monstera.webp" alt="Monstera Shipping Operations">
+            <img src="images/airport.png" alt="Airport Operations">
         </div>
 
         <div class="slide">
-            <img src="img/ship2.webp" alt="Shipping Containers">
+            <img src="images/custom_lady.png" alt="Customs Services">
         </div>
 
         <div class="slide">
-            <img src="img/ship_port.png" alt="Warehouse Operations">
+            <img src="images/emp_port.png" alt="Empty Port">
         </div>
 
         <div class="slide">
-            <img src="img/emp_port.png" alt="Logistics">
+            <img src="images/ship_monstera.webp" alt="Monstera Shipping Operations">
         </div>
 
         <div class="slide">
-            <img src="img/airport.png" alt="Cargo Ship">
+            <img src="images/ship_port.png" alt="Ship at Port">
         </div>
 
         <div class="slide">
-            <img src="img/custom_lady.png" alt="Customs Clearance">
+            <img src="images/ship2.webp" alt="Cargo Ship">
         </div>
 
         <div class="slide">
-            <img src="img/truck.png" alt="Air Freight">
+            <img src="images/truck.png" alt="Logistics Truck">
         </div>
 
         <a class="prev" onclick="changeSlide(-1)">❮</a>
         <a class="next" onclick="changeSlide(1)">❯</a>
+    </div>
+
+    <div class="info-pane">
+        <h2>Why Choose Our Import/Export Services?</h2>
+        <ul>
+            <li>Efficient and reliable shipping operations for your business needs.</li>
+            <li>Secure and timely delivery of goods worldwide.</li>
+            <li>State-of-the-art warehousing solutions for optimal storage.</li>
+            <li>Streamlined logistics to keep your supply chain moving.</li>
+            <li>Global cargo shipping with unmatched expertise.</li>
+            <li>Hassle-free customs clearance for smooth import/export.</li>
+            <li>Fast and efficient air freight services for urgent deliveries.</li>
+        </ul>
+    </div>
+
+    <div class="hero-container">
+        <!-- Left side - Welcome Text -->
+        <div class="hero-section">
+            <div class="text-content">
+                <h1 class="typing-text"></h1>
+                <div class="subtitle">
+                    <h2>Professional Import</h2>
+                    <h2>Export And CHA Services</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side - Enquiry Form -->
+        <div class="enquiry-form">
+            <h2>Get in Touch</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                
+                <div class="form-group">
+                    <select id="service" name="service" required>
+                        <option value="">Select Service</option>
+                        <option value="import">Import Services</option>
+                        <option value="export">Export Services</option>
+                        <option value="logistics">Logistics</option>
+                        <option value="warehousing">Warehousing</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
     </div>
 
     <script>
@@ -82,10 +143,202 @@
             slides[slideIndex-1].style.display = "block";
         }
 
-        // Auto slide every 3 seconds
-        setInterval(() => {
+        // Auto advance slides every 5 seconds
+        setInterval(function() {
             changeSlide(1);
-        }, 3000);
+        }, 5000);
+
+        const text = "Welcome to Monstera Future";
+        const typingText = document.querySelector('.typing-text');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingText.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
+            } else {
+                // After typing is complete, show subtitle
+                document.querySelector('.subtitle').style.opacity = '1';
+            }
+        }
+
+        window.onload = type;
+
+        // Form validation and handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            console.log('Form submitted');
+            // You can add AJAX submission or other handling here
+        });
+
+        // Start typing animation when page loads
+        window.addEventListener('load', type);
+
+        // Add mobile menu toggle functionality
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('responsive');
+        }
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.background = 'white';
+                nav.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Add active class to current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLocation = location.href;
+            const menuItems = document.querySelectorAll('nav ul li a');
+            menuItems.forEach(link => {
+                if(link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
+
+    <style>
+        .hero-container {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .hero-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .typing-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            border-right: 3px solid #333;
+            padding-right: 8px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0% { border-right-color: transparent }
+            50% { border-right-color: #333 }
+            100% { border-right-color: transparent }
+        }
+
+        .enquiry-form {
+            flex: 1;
+            max-width: 500px;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .enquiry-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+            }
+
+            .enquiry-form {
+                max-width: 100%;
+            }
+
+            .typing-text {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Useful Links Section -->
+            <div class="footer-section">
+                <h3>USEFUL LINKS</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>CONTACT</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919960797128">+91 9960797128</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:monsterafuture@outlook.com">monsterafuture@outlook.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="copyright-bar">
+            <p>© Copyrights 2024. Monstera Future. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
