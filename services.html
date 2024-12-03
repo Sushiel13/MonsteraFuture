@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Monstera Future</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Services Hero Section -->
+    <div class="hero-container">
+        <!-- Left side - Welcome Text -->
+        <div class="hero-section">
+            <div class="text-content">
+                <h1 class="typing-text"></h1>
+                <div class="subtitle">
+                    <h2>Import/Export Services</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Information Section -->
+    <div class="info-pane">
+        <h2>Our Services</h2>
+        <ol>
+            <li>
+                <strong>Organic Food Products</strong><br>
+                As consumers become more health-conscious, the demand for organic food products like fruits, vegetables, grains, and snacks is increasing. Importing these from countries with strong organic farming practices can be highly lucrative.
+            </li>
+            <li>
+                <strong>Electronics and Gadgets</strong><br>
+                The global demand for electronics such as smartphones, laptops, and accessories remains strong. Importing these products from tech hubs like China, Japan, and South Korea can be a profitable business if you stay updated with the latest trends.
+            </li>
+            <li>
+                <strong>Luxury Goods</strong><br>
+                There is always demand for luxury goods like designer handbags, watches, and high-end fashion items. Importing these from countries known for luxury brands (e.g., Italy or France) can cater to affluent consumers.
+            </li>
+            <li>
+                <strong>Renewable Energy Equipment</strong><br>
+                As the world transitions towards sustainable energy solutions, importing renewable energy equipment such as solar panels or wind turbines presents significant growth potential.
+            </li>
+            <li>
+                <strong>Fashion and Apparel</strong><br>
+                The fashion industry is dynamic, with constant demand for unique clothing and accessories. Exporting textiles and apparel from India, which has a rich heritage in fabrics and garments, is highly profitable. The U.S. and European markets are particularly receptive to such exports.
+            </li>
+            <li>
+                <strong>Handmade Crafts and Home Decor</strong><br>
+                Handmade crafts such as pottery, textiles, jewelry, and home decor have a unique appeal in international markets. Exporting these from countries with rich cultural traditions can be a lucrative business.
+            </li>
+            <li>
+                <strong>Spices and Herbs</strong><br>
+                India is one of the largest producers of spices globally. Exporting premium spices like turmeric, cumin, cardamom, and cinnamon to markets in the U.S., Europe, and beyond offers substantial profit potential.
+            </li>
+            <li>
+                <strong>Natural Beauty Products</strong><br>
+                With growing awareness of the benefits of organic skincare products, exporting natural beauty items such as essential oils, herbal cosmetics, and Ayurvedic products is becoming increasingly profitable.
+            </li>
+            <li>
+                <strong>Agro-Commodities</strong><br>
+                Exporting agricultural products like rice, tea, fruits, vegetables, and dairy can be highly profitable due to their consistent demand across international markets.
+            </li>
+            <li>
+                <strong>Gems and Jewelry</strong><br>
+                India has a strong heritage in gems and jewelry manufacturing. Exporting diamonds, gold jewelry, or other precious stones to high-demand markets like the U.S. can yield substantial profits.
+            </li>
+        </ol>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Useful Links Section -->
+            <div class="footer-section">
+                <h3>USEFUL LINKS</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3>CONTACT</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919960797128">+91 9960797128</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:monsterafuture@outlook.com">monsterafuture@outlook.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="copyright-bar">
+            <p>© Copyrights 2024. Monstera Future. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Typing effect
+        const text = "Our Services";  // Changed text for services page
+        const typingText = document.querySelector('.typing-text');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingText.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
+            }
+        }
+
+        // Start typing animation when page loads
+        window.addEventListener('load', type);
+
+        // Add active class to current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLocation = location.href;
+            const menuItems = document.querySelectorAll('nav ul li a');
+            menuItems.forEach(link => {
+                if(link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
