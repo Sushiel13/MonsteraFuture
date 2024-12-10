@@ -1,15 +1,13 @@
-
-
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { Services } from '../components/Services';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export function HomePage() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    history.push('/contact');
+    navigate('/contact');
   };
 
   return (
